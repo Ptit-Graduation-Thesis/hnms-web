@@ -1,10 +1,7 @@
-import { SomeActionType } from '@/contexts/app/app.type'
-
 export enum ActionType {
-  SOME_ACTION = '@APP/SOME_ACTION',
+  TOGGLE_COLLAPSE = '@APP/TOGGLE_COLLAPSE',
 }
 
-export const someAction = (payload: SomeActionType) => ({
-  type: ActionType.SOME_ACTION,
-  payload,
+export const toggleCollapse = () => ({
+  type: ActionType.TOGGLE_COLLAPSE,
 })

@@ -3,9 +3,14 @@ import { useHistory } from 'react-router-dom'
 
 import { useProfile } from '@/data/useProfile'
 import styles from '@/styles/common.module.scss'
+import { SidebarKey } from '@/enums/sidebar-key'
 import SideBar from './SideBar'
 
-const Layout: React.FC = ({ children }) => {
+type LayoutProp = {
+  sidebarKey: SidebarKey
+}
+
+const Layout: React.FC<LayoutProp> = ({ children, sidebarKey }) => {
   const history = useHistory()
 
   const { data, isError } = useProfile()
@@ -17,7 +22,7 @@ const Layout: React.FC = ({ children }) => {
   if (data) {
     return (
       <div className={styles.layout}>
-        <SideBar />
+        <SideBar sidebarKey={sidebarKey} />
         <div className={styles.content}>
           {children}
         </div>

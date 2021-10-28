@@ -2,9 +2,10 @@ import React from 'react'
 
 import HomeComponent from '@/components/home/Home'
 import Layout from '@/common/Layout'
+import { SidebarKey } from '@/enums/sidebar-key'
 
 const Home = () => (
-  <Layout>
+  <Layout sidebarKey={SidebarKey.HOME}>
     <HomeComponent />
   </Layout>
 )

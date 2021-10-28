@@ -8,3 +8,29 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+// custom antd
+.ant-menu-title-content {
+  min-width: 15rem !important;
+}
+
+.ant-menu-item:hover {
+  .ant-menu-item-icon {
+    filter: invert(0%) sepia(96%) saturate(19%) hue-rotate(74deg)
+      brightness(114%) contrast(300%);
+  }
+}
+
+.ant-menu-item.ant-menu-item-selected > .ant-menu-item-icon {
+  filter: invert(0%) sepia(96%) saturate(19%) hue-rotate(74deg) brightness(114%)
+    contrast(300%);
+}
+
+.ant-menu.ant-menu-inline-collapsed > .ant-menu-item {
+  padding-left: calc(50% - 0.75rem);
+  padding-right: calc(50% - 0.75rem);
+}
+
+.ant-menu-title-content {
+  font-size: medium;
+}
