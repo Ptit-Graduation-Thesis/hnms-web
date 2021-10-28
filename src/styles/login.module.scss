@@ -1,0 +1,70 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 150rem;
+    height: 150rem;
+    position: absolute;
+    top: 20rem;
+    left: calc(50% - 75rem);
+    background-color: #1b9cfc;
+    border-radius: 50%;
+    border: solid white 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.form {
+  position: relative;
+  display: flex;
+  width: 60rem;
+  height: 40rem;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.login_img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+.login_form {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo_container {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 3rem;
+}
