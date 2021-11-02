@@ -1,3 +1,7 @@
+export enum LocalStorageKey {
+  IS_COLLAPSE = 'IS_COLLAPSE'
+}
+
 export const setLocalStorage = (key: string, value: string) => {
   window.localStorage.setItem(key, value)
 }

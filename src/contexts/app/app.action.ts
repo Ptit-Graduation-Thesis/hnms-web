@@ -1,7 +1,8 @@
 export enum ActionType {
-  TOGGLE_COLLAPSE = '@APP/TOGGLE_COLLAPSE',
+  UPDATE_COLLAPSE = '@APP/UPDATE_COLLAPSE',
 }
 
-export const toggleCollapse = () => ({
-  type: ActionType.TOGGLE_COLLAPSE,
+export const updateCollapse = (payload: boolean) => ({
+  type: ActionType.UPDATE_COLLAPSE,
+  payload,
 })

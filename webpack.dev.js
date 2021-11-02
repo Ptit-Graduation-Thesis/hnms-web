@@ -12,21 +12,20 @@ module.exports = merge(common, {
     }),
     new webpack.HotModuleReplacementPlugin({ multistep: true }),
   ],
+  watchOptions: {
+    poll: true,
+    aggregateTimeout: 300,
+    ignored: [
+      `${__dirname}/node_modules`,
+    ],
+  },
+  stats: 'errors-only',
   devServer: {
     port: 8080,
     host: '0.0.0.0',
-    progress: true,
-    hot: true,
+    hot: false,
     historyApiFallback: true,
-    watchContentBase: true,
-    quiet: true,
-    watchOptions: {
-      poll: true,
-      aggregateTimeout: 300,
-      ignored: [
-        `${__dirname}/node_modules`,
-      ],
-    },
+    watchFiles: ['src/**/*'],
   },
   devtool: 'inline-source-map',
 })

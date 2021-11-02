@@ -1,7 +1,7 @@
 .background {
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(240, 240, 240, 0.8);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -30,9 +30,9 @@
   width: 60rem;
   height: 40rem;
   background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
   z-index: 1;
 }
@@ -58,7 +58,7 @@
 
 .logo_container {
   position: absolute;
-  top: 1rem;
+  top: 2.5rem;
   left: 0;
   width: 100%;
   display: flex;

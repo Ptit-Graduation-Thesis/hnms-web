@@ -3,5 +3,6 @@ export enum SidebarKey {
   EMPLOYEE = 'employee',
   ITEM = 'item',
   BRANCH = 'branch',
+  CUSTOMER = 'customer',
   LOGOUT = 'logout'
 }

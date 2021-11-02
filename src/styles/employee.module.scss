@@ -1,0 +1,33 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter_select {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.search {
+  width: 15rem;
+}
+
+.select {
+  width: 18rem;
+  margin-right: 1rem;
+}
+
+.modal_action {
+  display: flex;
+  justify-content: flex-end;
+}
