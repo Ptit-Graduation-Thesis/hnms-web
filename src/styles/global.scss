@@ -112,6 +112,25 @@
   margin-left: 3rem;
 }
 
+.title-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.filter-search {
+  width: 15rem;
+}
+
+.modal-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
 // custom antd
 .ant-menu-inline {
   width: 20rem;

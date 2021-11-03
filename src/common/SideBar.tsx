@@ -34,6 +34,12 @@ const MENU_ITEM = [
     icon: <img className={styles.sidebar_icon} src={employeeIcon} alt="" />,
   },
   {
+    key: SidebarKey.CUSTOMER,
+    url: '/customer',
+    title: 'Customer',
+    icon: <img className={styles.sidebar_icon} src={customerIcon} alt="" />,
+  },
+  {
     key: SidebarKey.ITEM,
     url: '/item',
     title: 'Item',
@@ -44,12 +50,6 @@ const MENU_ITEM = [
     url: '/branch',
     title: 'Branch',
     icon: <img className={styles.sidebar_icon} src={buildingIcon} alt="" />,
-  },
-  {
-    key: SidebarKey.CUSTOMER,
-    url: '/customer',
-    title: 'Customer',
-    icon: <img className={styles.sidebar_icon} src={customerIcon} alt="" />,
   },
 ]
 

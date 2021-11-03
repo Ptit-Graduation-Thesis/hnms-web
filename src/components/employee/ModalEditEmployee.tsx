@@ -11,11 +11,11 @@ import { useMutation, useQueryClient } from 'react-query'
 import dayjs from 'dayjs'
 
 import editIcon from '@/assets/img/edit.svg'
-import styles from '@/styles/employee.module.scss'
 import { useSuggestRoles } from '@/data/useSuggestRoles'
 import { useSuggestBranch } from '@/data/useSuggestBranchs'
 import { api } from '@/utils/axios'
 import { DetailUser } from '@/types/user.type'
+import { QUERY_KEY } from '@/data/query-key'
 
 type ModalProps = {
   employee: DetailUser
@@ -40,7 +40,7 @@ const ModalEditEmployee: React.FC<ModalProps> = ({ employee }) => {
     (params) => api.put(`/users/${employee.id}`, params),
     {
       onSuccess: async () => {
-        await queryClient.invalidateQueries()
+        await queryClient.invalidateQueries(QUERY_KEY.USERS)
         onClose()
         message.success('The employee was successfully edited')
       },
@@ -205,7 +205,7 @@ const ModalEditEmployee: React.FC<ModalProps> = ({ employee }) => {
             </Col>
           </Row>
           <Divider className="mt-0 mb-4" />
-          <div className={styles.modal_action}>
+          <div className="modal-action">
             <Button className="mr-3" onClick={onClose}>Cancel</Button>
             <Button type="primary" htmlType="submit" loading={isLoading}>Save</Button>
           </div>
