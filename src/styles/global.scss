@@ -131,6 +131,19 @@
   justify-content: flex-end;
 }
 
+.required {
+  color: #ff4d4f;
+  font-family: SimSun, sans-serif;
+}
+
+.d-none {
+  display: none;
+}
+
+.item-hidden .ant-form-item-control-input {
+  display: none;
+}
+
 // custom antd
 .ant-menu-inline {
   width: 20rem;

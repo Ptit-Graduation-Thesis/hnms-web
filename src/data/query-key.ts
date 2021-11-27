@@ -3,5 +3,6 @@ export enum QUERY_KEY {
   USERS = 'users',
   SUGGEST_ROLES = 'suggest roles',
   SUGGEST_BRANCHS = 'suggest branchs',
-  BRANCHS = 'branchs'
+  BRANCHS = 'branchs',
+  ITEMS = 'items'
 }
