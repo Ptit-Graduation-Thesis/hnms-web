@@ -26,7 +26,8 @@ const Login = () => {
         history.push('/')
       },
       onError: (err: AxiosError) => {
-        message.error(err?.response?.data?.message)
+        if (err?.response?.data) message.error(err?.response?.data?.message)
+        else message.error('Something went wrong')
       },
     },
   )

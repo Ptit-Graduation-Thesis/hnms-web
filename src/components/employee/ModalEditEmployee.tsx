@@ -9,6 +9,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
 import dayjs from 'dayjs'
+import { AxiosError } from 'axios'
 
 import editIcon from '@/assets/img/edit.svg'
 import { useSuggestRoles } from '@/data/useSuggestRoles'
@@ -44,7 +45,10 @@ const ModalEditEmployee: React.FC<ModalProps> = ({ employee }) => {
         onClose()
         message.success('The employee was successfully edited')
       },
-      onError: () => { message.error('Edit employee was failue') },
+      onError: (err: AxiosError) => {
+        if (err?.response?.data) message.error(err?.response?.data?.message)
+        else message.error('Something went wrong')
+      },
     },
   )
 

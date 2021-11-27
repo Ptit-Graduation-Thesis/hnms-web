@@ -4,6 +4,8 @@ import {
 } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
+import { AxiosError } from 'axios'
+
 import { api } from '@/utils/axios'
 import { QUERY_KEY } from '@/data/query-key'
 
@@ -27,7 +29,10 @@ const ModalCreateBranch = () => {
         onClose()
         message.success('The branch was successfully created')
       },
-      onError: () => { message.error('Create branch was failue') },
+      onError: (err: AxiosError) => {
+        if (err?.response?.data) message.error(err?.response?.data?.message)
+        else message.error('Something went wrong')
+      },
     },
   )
 

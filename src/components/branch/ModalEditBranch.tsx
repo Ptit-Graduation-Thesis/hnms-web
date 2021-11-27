@@ -4,6 +4,7 @@ import {
 } from 'antd'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
+import { AxiosError } from 'axios'
 
 import editIcon from '@/assets/img/edit.svg'
 import { api } from '@/utils/axios'
@@ -34,7 +35,10 @@ const ModalEditBranch: React.FC<ModalProps> = ({ branch }) => {
         onClose()
         message.success('The branch was successfully edited')
       },
-      onError: () => { message.error('Edit branch was failue') },
+      onError: (err: AxiosError) => {
+        if (err?.response?.data) message.error(err?.response?.data?.message)
+        else message.error('Something went wrong')
+      },
     },
   )
 

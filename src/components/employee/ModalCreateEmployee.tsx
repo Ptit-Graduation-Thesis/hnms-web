@@ -8,6 +8,7 @@ import {
 import React, { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
+import { AxiosError } from 'axios'
 
 import { useSuggestRoles } from '@/data/useSuggestRoles'
 import { useSuggestBranch } from '@/data/useSuggestBranchs'
@@ -37,7 +38,10 @@ const ModalCreateEmployee = () => {
         onClose()
         message.success('The employee was successfully created')
       },
-      onError: () => { message.error('Create employee was failue') },
+      onError: (err: AxiosError) => {
+        if (err?.response?.data) message.error(err?.response?.data?.message)
+        else message.error('Something went wrong')
+      },
     },
   )
 
