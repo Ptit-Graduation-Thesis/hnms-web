@@ -13,7 +13,7 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin({ multistep: true }),
   ],
   watchOptions: {
-    poll: true,
+    poll: 100,
     aggregateTimeout: 300,
     ignored: [
       `${__dirname}/node_modules`,
