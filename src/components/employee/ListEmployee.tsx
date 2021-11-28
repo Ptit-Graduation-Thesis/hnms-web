@@ -32,7 +32,7 @@ const columns: ColumnsType<any> = [
   { title: 'Role', dataIndex: 'role' },
   { title: 'Branch', dataIndex: 'branch' },
   { title: 'Status', dataIndex: 'status' },
-  { title: '', dataIndex: 'action', width: 50 },
+  { dataIndex: 'action', width: 50 },
 ]
 
 const ListEmployee = () => {

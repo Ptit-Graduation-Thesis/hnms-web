@@ -15,7 +15,7 @@ const columns: ColumnsType<any> = [
   { title: 'ID', dataIndex: 'id' },
   { title: 'Name', dataIndex: 'name' },
   { title: 'Address', dataIndex: 'address' },
-  { title: '', dataIndex: 'action', width: 50 },
+  { dataIndex: 'action', width: 50 },
 ]
 
 const ListBranch = () => {

@@ -63,7 +63,7 @@ const ModalCreateItem = () => {
 
   return (
     <>
-      <Modal width={500} footer={null} closable={false} visible={visible}>
+      <Modal footer={null} closable={false} visible={visible}>
         <h2>Create employee</h2>
         <Form form={form} layout="vertical" onFinish={onFinish}>
           <Form.Item

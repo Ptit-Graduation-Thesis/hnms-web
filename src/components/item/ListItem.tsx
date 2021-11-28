@@ -22,7 +22,7 @@ const columns: ColumnsType<any> = [
   { title: 'Price', dataIndex: 'price' },
   { title: 'Qr code', dataIndex: 'qrCode' },
   { title: 'Type', dataIndex: 'type' },
-  { title: 'Action', dataIndex: 'action' },
+  { dataIndex: 'action', width: 50 },
 ]
 
 const ListItem = () => {

@@ -73,7 +73,7 @@ const ModalEditItem: React.FC<ModalEditItemProps> = ({ item }) => {
 
   return (
     <>
-      <Modal width={500} footer={null} closable={false} visible={visible}>
+      <Modal footer={null} closable={false} visible={visible}>
         <h2>Edit employee</h2>
         <Form form={form} layout="vertical" onFinish={onFinish} initialValues={item}>
           <Form.Item
@@ -138,7 +138,7 @@ const ModalEditItem: React.FC<ModalEditItemProps> = ({ item }) => {
           </Form.Item>
           <div className="modal-action">
             <Button className="mr-3" onClick={onClose}>Cancel</Button>
-            <Button type="primary" htmlType="submit" loading={isLoading}>Edit</Button>
+            <Button type="primary" htmlType="submit" loading={isLoading}>Save</Button>
           </div>
         </Form>
       </Modal>
