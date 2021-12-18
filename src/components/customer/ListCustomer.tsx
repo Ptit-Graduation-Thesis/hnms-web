@@ -56,7 +56,18 @@ const ListCustomer = () => {
           />
         </div>
       </div>
-      <Table columns={columns} dataSource={dataSource} loading={isLoading} />
+      <Table
+        columns={columns}
+        dataSource={dataSource}
+        loading={isLoading}
+        onChange={(pagination) => setFilter((old) => ({ ...old, page: pagination.current }))}
+        pagination={{
+          current: filter?.page,
+          total: customers?.total,
+          defaultPageSize: customers?.limit,
+          showSizeChanger: false,
+        }}
+      />
     </div>
   )
 }

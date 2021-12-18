@@ -60,7 +60,7 @@ const ListBranch = () => {
         loading={isLoading}
         onChange={(pagination) => setFilter((old) => ({ ...old, page: pagination.current }))}
         pagination={{
-          current: branchs?.page,
+          current: filterBranchs?.page,
           total: branchs?.total,
           defaultPageSize: branchs?.limit,
           showSizeChanger: false,

@@ -82,7 +82,7 @@ const ListItem = () => {
         loading={isLoading}
         onChange={(pagination) => setFilter((old) => ({ ...old, page: pagination.current }))}
         pagination={{
-          current: items?.page,
+          current: filter?.page,
           total: items?.total,
           defaultPageSize: items?.limit,
           showSizeChanger: false,

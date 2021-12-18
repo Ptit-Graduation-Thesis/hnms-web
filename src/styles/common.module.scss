@@ -49,6 +49,7 @@
 }
 
 .menu {
+  height: calc(100% - 4rem);
   min-height: calc(100vh - 4rem);
 
   .full_name {

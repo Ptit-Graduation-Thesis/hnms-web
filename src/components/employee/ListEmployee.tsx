@@ -146,7 +146,7 @@ const ListEmployee = () => {
         loading={isLoading}
         onChange={(pagination) => setFilter((old) => ({ ...old, page: pagination.current }))}
         pagination={{
-          current: employees?.page,
+          current: filterUsers?.page,
           total: employees?.total,
           defaultPageSize: employees?.limit,
           showSizeChanger: false,
