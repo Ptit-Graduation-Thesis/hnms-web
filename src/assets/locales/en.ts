@@ -1,5 +1,5 @@
 export default {
-  home: 'Home page',
+  home: 'Dashboard page',
   login: {
     welcome: 'Welcome back!',
     username: 'Username',

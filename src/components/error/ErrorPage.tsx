@@ -27,7 +27,7 @@ const ErrorPage = () => {
     <div>
       <h1>Error status: {status}</h1>
       <h2>Message: {errorMessage}</h2>
-      <Link to="/">Return HomePage</Link>
+      <Link to="/">Return DashboardPage</Link>
     </div>
   )
 }

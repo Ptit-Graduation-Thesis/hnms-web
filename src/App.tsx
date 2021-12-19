@@ -10,7 +10,7 @@ import '@/styles/global.scss'
 import { AppContextProvider } from '@/contexts/app/app.context'
 import PrivateRoute from '@/common/PrivateRoute'
 import Login from '@/pages/auth/Login'
-import Home from '@/pages/home/Home'
+import Dashboard from '@/pages/dashboard/Dashboard'
 import ErrorPage from '@/components/error/ErrorPage'
 import ListEmployee from '@/pages/employee/ListEmployee'
 import ListItem from '@/pages/item/ListItem'
@@ -23,7 +23,7 @@ const ROUTE = (
   <BrowserRouter>
     <Switch>
       <Route path="/login" component={Login} />
-      <PrivateRoute exact path="/" component={Home} />
+      <PrivateRoute exact path="/" component={Dashboard} />
       <PrivateRoute exact path="/employee" component={ListEmployee} />
       <PrivateRoute exact path="/item" component={ListItem} />
       <PrivateRoute exact path="/branch" component={ListBranch} />

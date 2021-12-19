@@ -74,7 +74,7 @@ const ModalEditItem: React.FC<ModalEditItemProps> = ({ item }) => {
   return (
     <>
       <Modal footer={null} closable={false} visible={visible}>
-        <h2>Edit employee</h2>
+        <h2>Edit item</h2>
         <Form form={form} layout="vertical" onFinish={onFinish} initialValues={item}>
           <Form.Item
             className="mb-0"

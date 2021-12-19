@@ -1,5 +1,5 @@
 export enum SidebarKey {
-  HOME = 'home',
+  DASHBOARD = 'dashboard',
   EMPLOYEE = 'employee',
   ITEM = 'item',
   BRANCH = 'branch',

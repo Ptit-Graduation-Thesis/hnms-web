@@ -5,5 +5,7 @@ export enum QUERY_KEY {
   SUGGEST_BRANCHS = 'suggest branchs',
   BRANCHS = 'branchs',
   ITEMS = 'items',
-  CUSTOMERS = 'customers'
+  CUSTOMERS = 'customers',
+  YEAR_STATISTIC_REVENUE = 'year statistic revenue',
+  MONTH_STATISTIC_REVENUE = 'month statistic revenue',
 }

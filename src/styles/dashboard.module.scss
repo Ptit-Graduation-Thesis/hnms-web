@@ -1,0 +1,13 @@
+.tab_content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chart {
+  flex: 1;
+
+  > * {
+    height: 100% !important;
+  }
+}

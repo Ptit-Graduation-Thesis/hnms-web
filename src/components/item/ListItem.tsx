@@ -13,6 +13,7 @@ import { getItemTypeName, ItemType } from '@/enums/item-type.enum'
 import { useItems } from '@/data/useItems'
 import { formatMoney } from '@/utils/format-number'
 import ModalEditItem from './ModalEditItem'
+import ModalDetailItem from './ModalDetailItem'
 
 const columns: ColumnsType<any> = [
   { title: 'ID', dataIndex: 'id' },
@@ -38,7 +39,12 @@ const ListItem = () => {
         picture: <Image height={50} src={item.pictureUrl} />,
         price: formatMoney(item.price),
         type: getItemTypeName(item.type),
-        action: <ModalEditItem item={item} />,
+        action: (
+          <div className="flex">
+            <ModalDetailItem item={item} />
+            <ModalEditItem item={item} />
+          </div>
+        ),
       }))
     }
 

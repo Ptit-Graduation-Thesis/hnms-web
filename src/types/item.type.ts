@@ -1,3 +1,5 @@
+import { DetailBranch } from './branch.type'
+
 export type DetailItem = {
   id: number
   name: string
@@ -5,8 +7,13 @@ export type DetailItem = {
   price: number
   pictureKey: string
   pictureUrl: string
-  quCode: string
+  qrCode: string
   type: number
+  branchItems: {
+    id: number
+    amount: number
+    branch: DetailBranch
+  }[]
 }
 
 export type FilterItem = {

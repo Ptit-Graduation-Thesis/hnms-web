@@ -45,7 +45,7 @@ const ModalEditBranch: React.FC<ModalProps> = ({ branch }) => {
   return (
     <>
       <Modal footer={null} closable={false} visible={visible}>
-        <h2>Create Branch</h2>
+        <h2>Edit Branch</h2>
         <Form form={form} layout="vertical" onFinish={editBranch} initialValues={branch}>
           <Form.Item
             label="Name"

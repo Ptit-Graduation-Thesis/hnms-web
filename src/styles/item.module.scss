@@ -1,9 +1,51 @@
 .filter {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 1.5rem;
 }
 
 .select {
   width: 18rem;
+  margin-right: 1rem;
+}
+
+.item_info {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  img {
+    margin-right: 0.5rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .item_name {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    span:last-child {
+      color: red;
+    }
+  }
+}
+
+.item_des {
+  white-space: break-spaces;
+}
+
+.close_icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.branch_item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }

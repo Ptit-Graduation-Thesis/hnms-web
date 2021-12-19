@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { useQueryClient } from 'react-query'
 
 import logoPng from '@/assets/img/logo.png'
-import homeIcon from '@/assets/img/home.svg'
+import dashboardIcon from '@/assets/img/dashboard.svg'
 import employeeIcon from '@/assets/img/employee.svg'
 import boxIcon from '@/assets/img/box.svg'
 import buildingIcon from '@/assets/img/building.svg'
@@ -22,10 +22,10 @@ import { useProfile } from '@/data/useProfile'
 
 const MENU_ITEM = [
   {
-    key: SidebarKey.HOME,
+    key: SidebarKey.DASHBOARD,
     url: '/',
-    title: 'Home',
-    icon: <img className={styles.sidebar_icon} src={homeIcon} alt="" />,
+    title: 'Dashboard',
+    icon: <img className={styles.sidebar_icon} src={dashboardIcon} alt="" />,
   },
   {
     key: SidebarKey.EMPLOYEE,
