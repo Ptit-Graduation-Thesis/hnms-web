@@ -1,14 +1,37 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
+import { Button } from 'antd'
+
+import { useProfile } from '@/data/useProfile'
+import { RoleStatus } from '@/enums/role-status.enum'
 
 type LocationState = {
   status: number
 }
 
 const ErrorPage = () => {
+  const history = useHistory()
   const location = useLocation<LocationState>()
   const [errorMessage, setErrorMessage] = useState('')
   const status = useMemo(() => (location.state && location.state.status ? location.state.status : 404), [location])
+
+  const { data } = useProfile()
+
+  const gobackUrl = useMemo(() => {
+    switch (data?.roleId) {
+      case RoleStatus.ADMIN:
+        return '/'
+
+      case RoleStatus.ACCOUNTANT:
+        return '/item'
+
+      case RoleStatus.SALE_EMPLOYEE:
+        return '/customer'
+
+      default:
+        return '/'
+    }
+  }, [data?.roleId])
 
   useEffect(() => {
     switch (status) {
@@ -27,7 +50,7 @@ const ErrorPage = () => {
     <div>
       <h1>Error status: {status}</h1>
       <h2>Message: {errorMessage}</h2>
-      <Link to="/">Return DashboardPage</Link>
+      <Button type="link" onClick={() => history.replace(gobackUrl)}>Return home</Button>
     </div>
   )
 }

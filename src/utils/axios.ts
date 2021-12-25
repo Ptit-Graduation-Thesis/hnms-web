@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 import { getLocalStorage, setLocalStorage } from '@/utils/storage'
+import { history } from '@/App'
 
 export const api = axios.create({
   baseURL: process.env.API,
@@ -8,6 +9,15 @@ export const api = axios.create({
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
   },
+})
+
+api.interceptors.response.use((res) => res, (err) => {
+  if (err.response.status === 403) {
+    history.push({
+      pathname: '/unauthorized',
+      state: { status: 403 },
+    })
+  }
 })
 
 const setHeaderAuthorization = (token: string) => {

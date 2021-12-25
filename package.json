@@ -17,6 +17,7 @@
     "antd-dayjs-webpack-plugin": "^1.0.6",
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
+    "history": "^4.10.1",
     "i18next": "^21.3.3",
     "lodash.debounce": "^4.0.8",
     "react": "^17.0.2",

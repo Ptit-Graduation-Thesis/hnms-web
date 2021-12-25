@@ -14,6 +14,7 @@ import logoImg from '@/assets/img/logo.png'
 import styles from '@/styles/login.module.scss'
 import { api, setToken } from '@/utils/axios'
 import { LoginType } from '@/types/login.type'
+import { RoleStatus } from '@/enums/role-status.enum'
 
 const Login = () => {
   const { t } = useTranslation()
@@ -23,7 +24,23 @@ const Login = () => {
     ({ username, password }: LoginType) => api.post('/auth/login', { username, password }), {
       onSuccess: (res) => {
         setToken(res.data.accessToken)
-        history.push('/')
+        switch (res.data.user.role.id) {
+          case RoleStatus.ADMIN:
+            history.push('/')
+            break
+
+          case RoleStatus.ACCOUNTANT:
+            history.push('/item')
+            break
+
+          case RoleStatus.SALE_EMPLOYEE:
+            history.push('/customer')
+            break
+
+          default:
+            history.push('/')
+            break
+        }
       },
       onError: (err: AxiosError) => {
         if (err?.response?.data) message.error(err?.response?.data?.message)

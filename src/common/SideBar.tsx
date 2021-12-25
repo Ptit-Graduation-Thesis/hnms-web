@@ -19,6 +19,7 @@ import { SidebarKey } from '@/enums/sidebar-key'
 import { clearToken } from '@/utils/axios'
 import { LocalStorageKey, setLocalStorage } from '@/utils/storage'
 import { useProfile } from '@/data/useProfile'
+import { RoleStatus } from '@/enums/role-status.enum'
 
 const MENU_ITEM = [
   {
@@ -26,30 +27,35 @@ const MENU_ITEM = [
     url: '/',
     title: 'Dashboard',
     icon: <img className={styles.sidebar_icon} src={dashboardIcon} alt="" />,
+    role: [RoleStatus.ADMIN],
   },
   {
     key: SidebarKey.EMPLOYEE,
     url: '/employee',
     title: 'Employee',
     icon: <img className={styles.sidebar_icon} src={employeeIcon} alt="" />,
+    role: [RoleStatus.ADMIN],
   },
   {
     key: SidebarKey.CUSTOMER,
     url: '/customer',
     title: 'Customer',
     icon: <img className={styles.sidebar_icon} src={customerIcon} alt="" />,
+    role: [RoleStatus.ADMIN, RoleStatus.SALE_EMPLOYEE, RoleStatus.ACCOUNTANT],
   },
   {
     key: SidebarKey.ITEM,
     url: '/item',
     title: 'Item',
     icon: <img className={styles.sidebar_icon} src={boxIcon} alt="" />,
+    role: [RoleStatus.ADMIN, RoleStatus.SALE_EMPLOYEE, RoleStatus.ACCOUNTANT],
   },
   {
     key: SidebarKey.BRANCH,
     url: '/branch',
     title: 'Branch',
     icon: <img className={styles.sidebar_icon} src={buildingIcon} alt="" />,
+    role: [RoleStatus.ADMIN],
   },
 ]
 
@@ -63,6 +69,8 @@ const SideBar: React.FC<SidebarProp> = ({ sidebarKey }) => {
   const queryClient = useQueryClient()
 
   const { data } = useProfile()
+
+  const hasPermission = useCallback((role: RoleStatus[]) => role.includes(data?.roleId), [data?.roleId])
 
   const toggle = useCallback(() => {
     setLocalStorage(LocalStorageKey.IS_COLLAPSE, JSON.stringify(!state.isCollapse))
@@ -100,7 +108,7 @@ const SideBar: React.FC<SidebarProp> = ({ sidebarKey }) => {
             <Menu.Divider />
           </>
         )}
-        {MENU_ITEM.map((item) => (
+        {MENU_ITEM.filter((item) => hasPermission(item.role)).map((item) => (
           <Menu.Item key={item.key} icon={item.icon} onClick={() => history.push(item.url)}>{item.title}</Menu.Item>
         ))}
         <Menu.Item
