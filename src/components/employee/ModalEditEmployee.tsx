@@ -1,3 +1,5 @@
+import React, { useCallback, useMemo, useState } from 'react'
+
 import {
   Button,
   Col,
@@ -5,18 +7,17 @@ import {
   Divider,
   Form, Input, InputNumber, message, Modal, Row, Select,
 } from 'antd'
-import React, { useCallback, useMemo, useState } from 'react'
+import { AxiosError } from 'axios'
+import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
-import dayjs from 'dayjs'
-import { AxiosError } from 'axios'
 
 import editIcon from '@/assets/img/edit.svg'
-import { useSuggestRoles } from '@/data/useSuggestRoles'
-import { useSuggestBranch } from '@/data/useSuggestBranchs'
-import { api } from '@/utils/axios'
-import { DetailUser } from '@/types/user.type'
 import { QUERY_KEY } from '@/data/query-key'
+import { useSuggestBranch } from '@/data/useSuggestBranchs'
+import { useSuggestRoles } from '@/data/useSuggestRoles'
+import { DetailUser } from '@/types/user.type'
+import { api } from '@/utils/axios'
 
 type ModalProps = {
   employee: DetailUser

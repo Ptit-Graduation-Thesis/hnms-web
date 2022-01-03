@@ -1,23 +1,24 @@
 import React, { Suspense } from 'react'
+
+import { createBrowserHistory } from 'history'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import {
   Router, Switch, Route,
 } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
-import { createBrowserHistory } from 'history'
 
 import '@/utils/i18next'
 import '@/styles/global.scss'
 
-import { AppContextProvider } from '@/contexts/app/app.context'
 import PrivateRoute from '@/common/PrivateRoute'
-import Login from '@/pages/auth/Login'
-import Dashboard from '@/pages/dashboard/Dashboard'
 import ErrorPage from '@/components/error/ErrorPage'
-import ListEmployee from '@/pages/employee/ListEmployee'
-import ListItem from '@/pages/item/ListItem'
+import { AppContextProvider } from '@/contexts/app/app.context'
+import Login from '@/pages/auth/Login'
 import ListBranch from '@/pages/branch/ListBranch'
 import ListCustomer from '@/pages/customer/ListCustomer'
+import Dashboard from '@/pages/dashboard/Dashboard'
+import ListEmployee from '@/pages/employee/ListEmployee'
+import ListItem from '@/pages/item/ListItem'
 
 export const history = createBrowserHistory()
 const queryClient = new QueryClient({

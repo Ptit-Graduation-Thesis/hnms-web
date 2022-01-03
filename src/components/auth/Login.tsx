@@ -1,20 +1,21 @@
 import React from 'react'
+
 import {
   Button, Form, Input, message,
 } from 'antd'
-import { useMutation } from 'react-query'
 import { AxiosError } from 'axios'
-import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useMutation } from 'react-query'
+import { useHistory } from 'react-router-dom'
 
-import loginImg from '@/assets/img/login.svg'
-import userImg from '@/assets/img/user.svg'
 import lockImg from '@/assets/img/lock.svg'
+import loginImg from '@/assets/img/login.svg'
 import logoImg from '@/assets/img/logo.png'
-import styles from '@/styles/login.module.scss'
-import { api, setToken } from '@/utils/axios'
-import { LoginType } from '@/types/login.type'
+import userImg from '@/assets/img/user.svg'
 import { RoleStatus } from '@/enums/role-status.enum'
+import styles from '@/styles/login.module.scss'
+import { LoginType } from '@/types/login.type'
+import { api, setToken } from '@/utils/axios'
 
 const Login = () => {
   const { t } = useTranslation()

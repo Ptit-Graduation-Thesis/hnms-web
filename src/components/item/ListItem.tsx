@@ -1,19 +1,23 @@
 import React, { useMemo, useState } from 'react'
+
 import {
   Divider, Image, Input, Select, Table,
 } from 'antd'
-import debounce from 'lodash.debounce'
 import { ColumnsType } from 'antd/lib/table'
+import debounce from 'lodash.debounce'
 
-import styles from '@/styles/item.module.scss'
-import ModalCreateItem from './ModalCreateItem'
-import { DetailItem, FilterItem } from '@/types/item.type'
-import { enumToArray } from '@/utils/helper'
-import { getItemTypeName, ItemType } from '@/enums/item-type.enum'
 import { useItems } from '@/data/useItems'
+import { useProfile } from '@/data/useProfile'
+import { getItemTypeName, ItemType } from '@/enums/item-type.enum'
+import { RoleStatus } from '@/enums/role-status.enum'
+import styles from '@/styles/item.module.scss'
+import { DetailItem, FilterItem } from '@/types/item.type'
 import { formatMoney } from '@/utils/format-number'
+import { enumToArray } from '@/utils/helper'
+
 import ModalEditItem from './ModalEditItem'
 import ModalDetailItem from './ModalDetailItem'
+import ModalCreateItem from './ModalCreateItem'
 
 const columns: ColumnsType<any> = [
   { title: 'ID', dataIndex: 'id' },
@@ -30,6 +34,11 @@ const ListItem = () => {
   const [filter, setFilter] = useState<FilterItem>()
 
   const { data: items, isLoading } = useItems(filter)
+  const { data: profile } = useProfile()
+
+  const hasPermit = useMemo(
+    () => [RoleStatus.ACCOUNTANT, RoleStatus.ADMIN].includes(profile?.roleId), [profile?.roleId],
+  )
 
   const dataSource = useMemo(() => {
     if (items) {
@@ -42,14 +51,14 @@ const ListItem = () => {
         action: (
           <div className="flex">
             <ModalDetailItem item={item} />
-            <ModalEditItem item={item} />
+            {hasPermit && <ModalEditItem item={item} />}
           </div>
         ),
       }))
     }
 
     return []
-  }, [items])
+  }, [hasPermit, items])
 
   const onSearch = debounce((keyword: string) => setFilter((old) => ({ ...old, keyword })), 500)
 
@@ -57,7 +66,7 @@ const ListItem = () => {
     <div>
       <div className="title-list">
         <h1>Item manager</h1>
-        <ModalCreateItem />
+        {hasPermit && <ModalCreateItem />}
       </div>
       <Divider />
       <div className={styles.filter}>

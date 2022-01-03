@@ -1,10 +1,11 @@
-import { message, Switch } from 'antd'
 import React from 'react'
-import { useMutation, useQueryClient } from 'react-query'
-import { AxiosError } from 'axios'
 
-import { api } from '@/utils/axios'
+import { message, Switch } from 'antd'
+import { AxiosError } from 'axios'
+import { useMutation, useQueryClient } from 'react-query'
+
 import { QUERY_KEY } from '@/data/query-key'
+import { api } from '@/utils/axios'
 
 type SwitchStatusProps = {
   id: number

@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
+
 import { useHistory } from 'react-router-dom'
 
-import { useProfile } from '@/data/useProfile'
-import styles from '@/styles/common.module.scss'
-import { SidebarKey } from '@/enums/sidebar-key'
-import SideBar from './SideBar'
 import { useAppContext } from '@/contexts/app/app.context'
+import { useProfile } from '@/data/useProfile'
+import { SidebarKey } from '@/enums/sidebar-key'
+import styles from '@/styles/common.module.scss'
+
+import SideBar from './SideBar'
 
 type LayoutProp = {
   sidebarKey: SidebarKey

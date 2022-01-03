@@ -1,16 +1,17 @@
 import React, { useCallback, useMemo, useState } from 'react'
+
 import {
   Button, DatePicker, Form, Input, message, Modal,
 } from 'antd'
+import { AxiosError } from 'axios'
+import dayjs from 'dayjs'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
-import { AxiosError } from 'axios'
 
-import dayjs from 'dayjs'
 import editIcon from '@/assets/img/edit.svg'
-import { api } from '@/utils/axios'
 import { QUERY_KEY } from '@/data/query-key'
 import { DetailCustomer } from '@/types/customer.type'
+import { api } from '@/utils/axios'
 
 interface ModalEditCustomerProps {
   customer: DetailCustomer

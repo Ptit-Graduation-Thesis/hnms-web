@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Dotenv = require('dotenv-webpack')
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 
 module.exports = {
   mode: 'none',

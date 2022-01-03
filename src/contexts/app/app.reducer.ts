@@ -1,5 +1,5 @@
-import { AppActionType, AppStateType } from '@/contexts/app/app.type'
 import { ActionType } from '@/contexts/app/app.action'
+import { AppActionType, AppStateType } from '@/contexts/app/app.type'
 import { getLocalStorage, LocalStorageKey } from '@/utils/storage'
 
 export const initialState: AppStateType = {

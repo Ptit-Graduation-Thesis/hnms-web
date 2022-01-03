@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+
 import { Button, Modal } from 'antd'
 
-import eyeIcon from '@/assets/img/eye.svg'
 import closeIson from '@/assets/img/close-icon.svg'
-import { DetailItem } from '@/types/item.type'
+import eyeIcon from '@/assets/img/eye.svg'
 import styles from '@/styles/item.module.scss'
+import { DetailItem } from '@/types/item.type'
 import { formatMoney } from '@/utils/format-number'
 
 interface ModalDetailItemProps {

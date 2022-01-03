@@ -1,7 +1,7 @@
 import React from 'react'
 
-import DashboardComponent from '@/components/dashboard/Dashboard'
 import Layout from '@/common/Layout'
+import DashboardComponent from '@/components/dashboard/Dashboard'
 import { SidebarKey } from '@/enums/sidebar-key'
 
 const Dashboard = () => (

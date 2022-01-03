@@ -1,3 +1,5 @@
+import React, { useCallback, useState } from 'react'
+
 import {
   Button,
   Col,
@@ -5,15 +7,14 @@ import {
   Divider,
   Form, Input, InputNumber, message, Modal, Row, Select,
 } from 'antd'
-import React, { useCallback, useState } from 'react'
+import { AxiosError } from 'axios'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
-import { AxiosError } from 'axios'
 
-import { useSuggestRoles } from '@/data/useSuggestRoles'
-import { useSuggestBranch } from '@/data/useSuggestBranchs'
-import { api } from '@/utils/axios'
 import { QUERY_KEY } from '@/data/query-key'
+import { useSuggestBranch } from '@/data/useSuggestBranchs'
+import { useSuggestRoles } from '@/data/useSuggestRoles'
+import { api } from '@/utils/axios'
 
 const ModalCreateEmployee = () => {
   const { t } = useTranslation()

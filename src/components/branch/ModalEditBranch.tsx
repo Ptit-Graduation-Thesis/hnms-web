@@ -1,15 +1,16 @@
 import React, { useCallback, useState } from 'react'
+
 import {
   Modal, Form, Input, Divider, Button, message,
 } from 'antd'
+import { AxiosError } from 'axios'
 import { useTranslation } from 'react-i18next'
 import { useMutation, useQueryClient } from 'react-query'
-import { AxiosError } from 'axios'
 
 import editIcon from '@/assets/img/edit.svg'
-import { api } from '@/utils/axios'
 import { QUERY_KEY } from '@/data/query-key'
 import { DetailBranch } from '@/types/branch.type'
+import { api } from '@/utils/axios'
 
 type ModalProps = {
   branch: DetailBranch

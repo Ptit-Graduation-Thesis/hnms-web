@@ -1,24 +1,26 @@
 import React, { useCallback, useMemo, useState } from 'react'
+
 import {
   Divider, Table, Select, Input,
 } from 'antd'
+import { SelectValue } from 'antd/lib/select'
 import { ColumnsType } from 'antd/lib/table'
 import debounce from 'lodash.debounce'
-import { SelectValue } from 'antd/lib/select'
 
-import styles from '@/styles/employee.module.scss'
-import { useUser } from '@/data/useUsers'
-import { formatDate } from '@/utils/date'
-import { getRoleName } from '@/enums/role-status.enum'
-import { formatMoney } from '@/utils/format-number'
-import { useSuggestRoles } from '@/data/useSuggestRoles'
 import { useSuggestBranch } from '@/data/useSuggestBranchs'
-import { enumToArray } from '@/utils/helper'
+import { useSuggestRoles } from '@/data/useSuggestRoles'
+import { useUser } from '@/data/useUsers'
+import { getRoleName } from '@/enums/role-status.enum'
 import { getUserStatusName, UserStatus } from '@/enums/user-status.enum'
+import styles from '@/styles/employee.module.scss'
 import { DetailUser, FilterUser, SearchUser } from '@/types/user.type'
-import SwitchStatus from './SwitchStatus'
+import { formatDate } from '@/utils/date'
+import { formatMoney } from '@/utils/format-number'
+import { enumToArray } from '@/utils/helper'
+
 import ModalCreateEmployee from './ModalCreateEmployee'
 import ModalEditEmployee from './ModalEditEmployee'
+import SwitchStatus from './SwitchStatus'
 
 const columns: ColumnsType<any> = [
   { title: 'ID', dataIndex: 'id' },

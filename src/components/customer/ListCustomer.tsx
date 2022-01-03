@@ -1,12 +1,14 @@
 import React, { useMemo, useState } from 'react'
-import { Divider, Input, Table } from 'antd'
-import debounce from 'lodash.debounce'
-import { ColumnsType } from 'antd/lib/table'
 
+import { Divider, Input, Table } from 'antd'
+import { ColumnsType } from 'antd/lib/table'
+import debounce from 'lodash.debounce'
+
+import { useCustomers } from '@/data/useCustomers'
 import styles from '@/styles/customer.module.scss'
 import { DetailCustomer, FilterCustomer } from '@/types/customer.type'
-import { useCustomers } from '@/data/useCustomers'
 import { formatDate } from '@/utils/date'
+
 import ModalCreateCustomer from './ModalCreateCustomer'
 import ModalEditCustomer from './ModalEditCustomer'
 

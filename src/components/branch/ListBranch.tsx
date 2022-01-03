@@ -1,13 +1,15 @@
 import React, { useMemo, useState } from 'react'
+
 import {
   Divider, Input, Table,
 } from 'antd'
 import { ColumnsType } from 'antd/lib/table'
 import debounce from 'lodash.debounce'
 
-import styles from '@/styles/branch.module.scss'
 import { useBranchs } from '@/data/useBanchs'
+import styles from '@/styles/branch.module.scss'
 import { DetailBranch, FilterBranch } from '@/types/branch.type'
+
 import ModalCreateBranch from './ModalCreateBranch'
 import ModalEditBranch from './ModalEditBranch'
 

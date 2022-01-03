@@ -1,7 +1,7 @@
 import React from 'react'
 
-import ListBranchComponent from '@/components/branch/ListBranch'
 import Layout from '@/common/Layout'
+import ListBranchComponent from '@/components/branch/ListBranch'
 import { SidebarKey } from '@/enums/sidebar-key'
 
 const ListBranch = () => (

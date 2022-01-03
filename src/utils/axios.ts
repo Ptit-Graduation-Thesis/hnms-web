@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-import { getLocalStorage, setLocalStorage } from '@/utils/storage'
 import { history } from '@/App'
+import { getLocalStorage, setLocalStorage } from '@/utils/storage'
 
 export const api = axios.create({
   baseURL: process.env.API,
